@@ -37,6 +37,14 @@ multiplicationForm.addEventListener("submit", (e) => {
 
   const multiplicatorNumber = +multiplicationInput.value;
 
-  if (!multiplicationNumber || !multiplicatorNumber) return;
+  if (isNaN(multiplicationNumber) || isNaN(multiplicatorNumber)) {
+  alert("Por favor, insira números válidos.");
+  return;
+}
+
+if (multiplicatorNumber <= 0) {
+  alert("O valor 'Multiplicar até' deve ser maior que 0.");
+  return;
+}
   createTable(multiplicationNumber, multiplicatorNumber);
 });
